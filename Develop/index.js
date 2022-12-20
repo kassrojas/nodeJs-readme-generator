@@ -2,16 +2,17 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generateReadMe = require('./utils/generateMarkdown.js');
 
+// function userInput uses inquirer to prompt questions in terminal
 const userInput = () => {
 return inquirer.prompt([
     {
         type: 'input',
-        message: 'What is the title of your application?',
+        message: 'What is the title of your application? The title should clarify the main goal of the project.',
         name: 'title',
     },
     {
         type: 'input',
-        message: 'Describe your application. What does it do?',
+        message: 'Describe your application. What does it do? Why did you use the technologies that you did? What are some of the challenges that you faced? What are some features you would like to add in the future?',
         name: 'description',
     },
     {
@@ -22,7 +23,7 @@ return inquirer.prompt([
     },
     {
         type: 'input',
-        message: 'Describe the usage of the application.',
+        message: 'If the user needs to run or install programs in order to run your program, list those steps here. If this does not apply, type N/A.',
         name: 'usage',
         default: 'N/A',
     },
@@ -35,20 +36,14 @@ return inquirer.prompt([
     },
     {
         type: 'input',
-        message: 'Add contributors',
+        message: 'List collaborators/team members that worked on this project. If there are none, type N/A.',
         name: 'contributing',
         default: 'N/A',
     },
     {
         type: 'input',
-        message: 'Give detailed instructions on how to run tests on your program.',
+        message: 'Give detailed instructions on how to run tests on your program. Provide code examples and ways to run them.',
         name: 'test',
-        default: 'N/A',
-    },
-    {
-        type: 'input',
-        message: 'List out any future questions',
-        name: 'questions',
         default: 'N/A',
     },
     {
@@ -65,6 +60,7 @@ return inquirer.prompt([
 
 };
 
+// function creates newReadMe.md and logs error or sucess if done successfully
 const writeFile = data => {
     fs.writeFile('newReadMe.md', data, error => {
         if (error){
@@ -75,6 +71,7 @@ const writeFile = data => {
     })
 };
 
+// grab data from userInput() and transfer input values to generateReadMe, transfer data to writeFile
 userInput()
 .then(input => {
     return generateReadMe(input);

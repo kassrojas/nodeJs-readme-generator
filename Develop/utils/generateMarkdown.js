@@ -1,15 +1,15 @@
-function generateMarkdown(data) {
+function generateReadMe(input) {
   return `
   
-# ${data.title}
+# ${input.title}
 
-[![License: ${encodeURIComponent(data.license)}](https://img.shields.io/badge/License-${encodeURIComponent(data.license)}-yellow.svg)](https://opensource.org/licenses/${encodeURIComponent(data.license)})
+[![License: ${encodeURIComponent(input.license)}](https://img.shields.io/badge/License-${encodeURIComponent(input.license)}-yellow.svg)](https://opensource.org/licenses/${encodeURIComponent(input.license)})
 
 
 
 ## Description
 
-${data.description}
+${input.description}
 
 ## Table of Contents
 
@@ -22,31 +22,30 @@ ${data.description}
 
 ## Installation
 
-To install necessary dependencies, run the following commands. ${data.installation}
+To install necessary dependencies, run the following commands. ${input.installation}
 
 ## Usage
 
-${data.usage}
+${input.usage}
 
 ## License
 
-This project is licensed under the ${data.license}.
+This project is licensed under the ${input.license}. For license notice, please click on the license badge at the top of this readme file or here: [![License: ${encodeURIComponent(input.license)}](https://img.shields.io/badge/License-${encodeURIComponent(input.license)}-yellow.svg)](https://opensource.org/licenses/${encodeURIComponent(input.license)})
+
 
 ## Contributing
 
-${data.contributing}
+${input.contributing}
 
 ## Tests
 
-${data.test}
+${input.test}
 
 ## Questions
 
-${data.questions}.
-
-If you have any other questions, please reach out via ${data.email} or visit my GitHub account ${data.gitHub}.
+If you have any other questions, please reach out via ${input.email} or visit my GitHub account (https://www.github.com/${input.gitHub}).
 
 `;
 }
 
-module.exports = generateMarkdown;
+module.exports = generateReadMe;
