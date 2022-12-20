@@ -30,7 +30,8 @@ ${input.usage}
 
 ## License
 
-This project is licensed under the ${input.license}. For license notice, please click on the license badge at the top of this readme file or here: [![License: ${encodeURIComponent(input.license)}](https://img.shields.io/badge/License-${encodeURIComponent(input.license)}-yellow.svg)](https://opensource.org/licenses/${encodeURIComponent(input.license)})
+This project is licensed under the ${input.license}. 
+For license notice, please click on the license badge at the top of this readme file or here: [![License: ${encodeURIComponent(input.license)}](https://img.shields.io/badge/License-${encodeURIComponent(input.license)}-yellow.svg)](https://opensource.org/licenses/${encodeURIComponent(input.license)})
 
 
 ## Contributing
