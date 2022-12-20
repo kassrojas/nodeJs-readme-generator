@@ -1,4 +1,3 @@
-// TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateReadMe = require('./utils/generateMarkdown.js');
@@ -51,6 +50,16 @@ return inquirer.prompt([
         message: 'List out any future questions',
         name: 'questions',
         default: 'N/A',
+    },
+    {
+        type: 'input',
+        message: 'What is your gitHub handle?',
+        name: 'gitHub',
+    },
+    {
+        type: 'input',
+        message: 'What is your email?',
+        name: 'email',
     },
 ])
 
